@@ -12,7 +12,17 @@ def pick_engineer() #Method to pick name from file
 end
 
 def featureA(name)
+  if name.include?" "
 
+     puts name.gsub(" ", ".")
+
+   else
+
+     puts ""
+
+                
+
+   end
 end
 
 def featureB(name)
