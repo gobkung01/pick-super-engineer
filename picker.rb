@@ -30,7 +30,12 @@ def featureB(name)
 end
 
 def featureC(name , keyw)
-
+  key = keyw.join
+  if !keyw.empty?
+    if name.include? key
+      puts name
+    end
+  end
 end
 
 pick_engineer() #Call method
