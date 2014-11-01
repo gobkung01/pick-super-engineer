@@ -24,7 +24,9 @@ def featureA(name)
 end
 
 def featureB(name)
-
+       index =name.split #split name and lastname in array
+       ndot =index[0]+" "+index[1].chr+"..." #to show  First name and first character lastname  with "..."# puts ndot
+       puts ndot
 end
 
 def featureC(name , keyw)
