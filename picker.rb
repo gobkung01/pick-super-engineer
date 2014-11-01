@@ -20,8 +20,6 @@ def featureA(name)
 
      puts ""
 
-                
-
    end
 end
 
