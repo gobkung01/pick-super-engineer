@@ -5,10 +5,8 @@ def pick_engineer() #Method to pick name from file
   name_list = Array.new() #Create blank array.
   name_file.each { |name| name_list.push(name) } #Read name from file then push it to array.
   rnd_name = name_list[rand(name_list.length)] #Random name from list then print it.
-  puts rnd_name #print random name
-  featureA(rnd_name) #call featureA and send random name
-  featureB(rnd_name) #call featureB and send random name
-  featureC(rnd_name , ARGV) #cal featureC and send random name and keyword
+  return rnd_name
+
 end
 
 def featureA(name)
@@ -29,13 +27,23 @@ def featureB(name)
        puts ndot
 end
 
-def featureC(name , keyw)
+def featureC( keyw)
+  name = pick_engineer() #Call method
   key = keyw.join #join array to string
+  loop_count = 0
   if !keyw.empty? #check if not empty
-    if name.include? key #find with keyword
-      puts name #print name to screen
+    while 1 do
+      name = pick_engineer() #Call method
+      if name.include? key
+        break
+      end
+      loop_count += 1
     end
   end
+  #puts "Loop count: #{loop_count}"
+  puts name
+  featureA(name) #call featureA and send random name
+  featureB(name) #call featureB and send random name
 end
 
-pick_engineer() #Call method
+featureC(ARGV) #cal featureC and send random name and keyword
